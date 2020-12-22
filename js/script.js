@@ -3,6 +3,16 @@ console.log("script file wired up and ready to roll!!!")
 // 1. allNames:
 // Use .forEach to print all persons names in the console.
 
+// how is this even working??
+console.log(data[0].name);
+
+data.forEach(allNames);
+
+function allNames(dataName) {
+    console.log(dataName.name);
+}
+
+
 // 2. totalAgeAllPersons:
 // Find the total combined age of all persons.
 
