@@ -11,6 +11,14 @@ console.log("script file wired up and ready to roll!!!")
 
 
 // 2. totalAgeAllPersons:
+
+////// NEW SOLUTION THAT USES REDUCE /////
+const totalAgeAllPersons2 = data.reduce(function(num1, num2) {
+    return num1 + num2.age;
+}, 0)
+console.log(totalAgeAllPersons2);
+
+/////// OLD SOLUTION THAT DIDN'T USE .REDUCE ////////
 // Find the total combined age of all persons.
 
 // let totalAgeAllPersons = 0;
@@ -72,20 +80,20 @@ console.log("script file wired up and ready to roll!!!")
 
 // 7. justSpock:
 // Create an array of all the pet objects where the pets named is "spock".
-const spockArr = [];
-const justSpock = data.filter(function(person) {
-    for (let i = 0; i < person.pets.length; i++) {
-        if (person.pets[i].name == "spock") {
-            spockArr.push(person.pets[i]);
-            return person.pets[i];
-        }
-    }
-})
-// here's the array that we're supposed to get....
-console.log(spockArr);
+// const spockArr = [];
+// const justSpock = data.filter(function(person) {
+//     for (let i = 0; i < person.pets.length; i++) {
+//         if (person.pets[i].name == "spock") {
+//             spockArr.push(person.pets[i]);
+//             return person.pets[i];
+//         }
+//     }
+// })
+// // here's the array that we're supposed to get....
+// console.log(spockArr);
 
-// this one doesn't work...why can't i get justSpock to return person.pets[i]?
-console.log(justSpock);
+// // this one doesn't work...why can't i get justSpock to return person.pets[i]?
+// console.log(justSpock);
 
 
 
