@@ -52,26 +52,83 @@ console.log("script file wired up and ready to roll!!!")
 //   * the string "war" if the person at that has BOTH a cat AND a dog.
 //   * the string "peace" otherwise.
 
-const warAndPeace = data.map(function(word) { //word is data[i]
-    let cat = false; // sets a default of no cat
-    let dog = false; // sets a default of no dog   
-        for (let j = 0; j < word.pets.length; j++) { // creates a loop to look at each pets array for each data[i] ('word')
-            if (word.pets[j].type == "cat") { // if a cat is found, change variable 'cat' to true
-                cat = true;
-            }
-            if (word.pets[j].type == "dog") { // if a dog is found, change variable 'dog' to true
-                dog = true;
-            }
-        } 
-    if (cat && dog) { // if cat and dog are both true
-        return "war";
-    } return "peace";
-})
+// const warAndPeace = data.map(function(word) { //word is data[i]
+//     let cat = false; // sets a default of no cat
+//     let dog = false; // sets a default of no dog   
+//         for (let j = 0; j < word.pets.length; j++) { // creates a loop to look at each pets array for each data[i] ('word')
+//             if (word.pets[j].type == "cat") { // if a cat is found, change variable 'cat' to true
+//                 cat = true;
+//             }
+//             if (word.pets[j].type == "dog") { // if a dog is found, change variable 'dog' to true
+//                 dog = true;
+//             }
+//         } 
+//     if (cat && dog) { // if cat and dog are both true
+//         return "war";
+//     } return "peace";
+// })
 
-console.log(warAndPeace);
+// console.log(warAndPeace);
 
 // 7. justSpock:
 // Create an array of all the pet objects where the pets named is "spock".
+const spockArr = [];
+const justSpock = data.filter(function(person) {
+    for (let i = 0; i < person.pets.length; i++) {
+        if (person.pets[i].name == "spock") {
+            spockArr.push(person.pets[i]);
+            return person.pets[i];
+        }
+    }
+})
+// here's the array that we're supposed to get....
+console.log(spockArr);
+
+// this one doesn't work...why can't i get justSpock to return person.pets[i]?
+console.log(justSpock);
+
+
+
+/*
+
+THIS IS SOME GARBAGE WHERE I WAS TRYING SOME OTHER STUFF THAT I COULDN'T GET TO WORK...
+
+// const justSpock = data.filter(function(pet) {
+//     const justSpock2 = [];
+//     for (let i = 0; i < pet.pets.length; i++) {
+//         if (pet.pets[i].name == "spock") {
+//             //console.log(pet.pets[i]);
+//             justSpock2.push(pet.pets[i]);
+//             console.log(justSpock2);
+//             return pet.pets[i];
+//         } console.log(justSpock2[0]);
+//     } //console.log(justSpock2);
+//     //console.log(pet.pets.name);
+// })
+// console.log(justSpock[0]);
+
+
+HERE'S ANOTHER THING THAT DIDN'T WORK... I TRIED NESTING FILTERS...
+
+//console.log(justSpock);
+
+// const justSpock = data.filter(function(pet){  // pet is data [i]
+//     const justSpock2 = pet.pets.filter(function(pet2) { // pet2 is pets[i]
+//         if (pet2.name == "spock") { //pet2.name is pets[i].name is pet.pets[i].name is data[i].pets[j].name
+//             return pet2;
+//         }
+//     })
+//     console.log(justSpock2[0]);
+//     return justSpock2[0];
+//     //if (justSpock2.name = "spock") {
+//     //    console.log("yo!!");
+//     //}
+// })
+// console.log(justSpock);
+
+*/
+
+
 
 
 // HUNGRY FOR MORE???
