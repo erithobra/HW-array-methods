@@ -40,17 +40,35 @@ console.log("script file wired up and ready to roll!!!")
 
 // 5. sadPeople:
 // Use .filter() to create an array of "sad" people (people with no pets).
-const sadPeople = data.filter(function(pet) {
-    return pet.pets.length == 0;
-})
+// const sadPeople = data.filter(function(pet) {
+//     return pet.pets.length == 0;
+// })
 
-console.log(sadPeople);
+// console.log(sadPeople);
 
 
 // 6. warAndPeace:
 // Use.map() to create an array called warAndPeace that has, in each index the string "war" or "peace"
 //   * the string "war" if the person at that has BOTH a cat AND a dog.
 //   * the string "peace" otherwise.
+
+const warAndPeace = data.map(function(word) { //word is data[i]
+    let cat = false; // sets a default of no cat
+    let dog = false; // sets a default of no dog   
+        for (let j = 0; j < word.pets.length; j++) { // creates a loop to look at each pets array for each data[i] ('word')
+            if (word.pets[j].type == "cat") { // if a cat is found, change variable 'cat' to true
+                cat = true;
+            }
+            if (word.pets[j].type == "dog") { // if a dog is found, change variable 'dog' to true
+                dog = true;
+            }
+        } 
+    if (cat && dog) { // if cat and dog are both true
+        return "war";
+    } return "peace";
+})
+
+console.log(warAndPeace);
 
 // 7. justSpock:
 // Create an array of all the pet objects where the pets named is "spock".
