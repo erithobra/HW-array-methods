@@ -22,16 +22,21 @@ console.log("script file wired up and ready to roll!!!")
 // 3. totalAgeAllPets:
 // Find the total combined age of all pets.
 
-let totalAgeAllPets = 0;
-for (let i = 0; i<data.length; i++){
-    for (let j = 0; j < data[i].pets.length; j++) {
-        totalAgeAllPets += data[i].pets[j].age;
-    }
- }
-console.log(totalAgeAllPets);
+// let totalAgeAllPets = 0;
+// for (let i = 0; i<data.length; i++){
+//     for (let j = 0; j < data[i].pets.length; j++) {
+//         totalAgeAllPets += data[i].pets[j].age;
+//     }
+//  }
+// console.log(totalAgeAllPets);
 
 // 4. oldEnough:
 // Use .filter() to create an array of people old enough to be president.
+const oldEnough = data.filter(function(num) {
+    return num.age >= 35;
+})
+
+console.log(oldEnough);
 
 // 5. sadPeople:
 // Use .filter() to create an array of "sad" people (people with no pets).
