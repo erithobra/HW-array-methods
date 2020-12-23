@@ -3,21 +3,37 @@ console.log("script file wired up and ready to roll!!!")
 // 1. allNames:
 // Use .forEach to print all persons names in the console.
 
-// how is this even working??
-console.log(data[0].name);
+// // how is this even working??
+// // console.log(data[0].name);
 
-data.forEach(allNames);
+// data.forEach(allNames);
 
-function allNames(dataName) {
-    console.log(dataName.name);
-}
+// function allNames(dataName) {
+//     console.log(dataName.name);
+// }
 
 
 // 2. totalAgeAllPersons:
 // Find the total combined age of all persons.
 
+let totalAgeAllPersons = 0;
+for (let i = 0; i<data.length; i++){
+    totalAgeAllPersons += data[i].age;
+}
+console.log(totalAgeAllPersons);
+
+// const total = data.reduce(function(allAge, nextAge) {
+//     return allAge += nextAge.age;
+// })
+// console.log(total);
+
+
+
 // 3. totalAgeAllPets:
 // Find the total combined age of all pets.
+
+//let totalAgeAllPets;
+
 
 // 4. oldEnough:
 // Use .filter() to create an array of people old enough to be president.
