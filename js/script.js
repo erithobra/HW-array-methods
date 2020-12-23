@@ -32,14 +32,20 @@ console.log("script file wired up and ready to roll!!!")
 
 // 4. oldEnough:
 // Use .filter() to create an array of people old enough to be president.
-const oldEnough = data.filter(function(num) {
-    return num.age >= 35;
-})
+// const oldEnough = data.filter(function(num) {
+//     return num.age >= 35;
+// })
 
-console.log(oldEnough);
+// console.log(oldEnough);
 
 // 5. sadPeople:
 // Use .filter() to create an array of "sad" people (people with no pets).
+const sadPeople = data.filter(function(pet) {
+    return pet.pets.length == 0;
+})
+
+console.log(sadPeople);
+
 
 // 6. warAndPeace:
 // Use.map() to create an array called warAndPeace that has, in each index the string "war" or "peace"
